@@ -14,6 +14,21 @@ import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import './MobileMenu.scss';
 import DrawerContent from "./DrawerContent";
 
+import {MainComponentsSizes} from '../../Constants';
+import makeStyles from "@material-ui/core/styles/makeStyles";
+
+const useStyles = makeStyles((theme) => ({
+  toolbar: {
+    minHeight: MainComponentsSizes.mobileHeaderHeight.md,
+    [`${theme.breakpoints.up('xs')} and (orientation: landscape)`]: {
+      minHeight: MainComponentsSizes.mobileHeaderHeight.xs,
+    },
+    [theme.breakpoints.up('sm')]: {
+      minHeight: MainComponentsSizes.mobileHeaderHeight.md,
+    },
+  },
+}));
+
 export default function MobileMenu() {
   const [drawerState, setDrawerState] = React.useState(false);
 
@@ -27,11 +42,12 @@ export default function MobileMenu() {
 
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
+  const classes = useStyles();
   return (
     <Box>
-      
+
       <AppBar>
-        <Toolbar className="mobileToolBar">
+        <Toolbar className={[classes.toolbar, "mobileToolBar"]}>
           <Box className="mobileMenu">
             <Typography variant="h6">
               Fresh Flowers
