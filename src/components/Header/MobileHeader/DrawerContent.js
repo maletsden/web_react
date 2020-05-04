@@ -29,6 +29,10 @@ const MenuListItems = [
     link: ""
   },
   {
+    title: "Доставка",
+    link: ""
+  },
+  {
     title: "Контакти",
     link: ""
   }
