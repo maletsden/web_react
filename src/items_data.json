@@ -1,0 +1,41 @@
+{
+  "ItemsData": [
+    {
+      "img": {
+        "path": "/images/img1.jpg",
+        "title": "Рожева гіпсофіла",
+        "height": 300
+      },
+      "price": 450
+    },
+    {
+      "img": {
+        "path": "/images/img2.jpg",
+        "title": "Рожеві тюльпани"
+      },
+      "price": 500
+    },
+    {
+      "img": {
+        "path": "/images/img3.jpg",
+        "title": "Кущові троянди",
+        "height": "300"
+      },
+      "price": 450
+    },
+    {
+      "img": {
+        "path": "/images/img4.jpg",
+        "title": "Букет з альстромерій"
+      },
+      "price": 600
+    },
+    {
+      "img": {
+        "path": "/images/img5.jpg",
+        "title": "Рожеві троянди"
+      },
+      "price": 350
+    }
+  ]
+}
