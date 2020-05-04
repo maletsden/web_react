@@ -1,10 +1,18 @@
 import React from 'react';
-import Grid from "@material-ui/core/Grid";
-import {Box} from "@material-ui/core";
+import {Box, Typography, Link} from "@material-ui/core";
+
+import makeStyles from "@material-ui/core/styles/makeStyles";
+
+import { InlineIcon } from '@iconify/react';
+import viberIcon from '@iconify/icons-fa-brands/viber';
+import telegramIcon from '@iconify/icons-fa-brands/telegram';
+import instagramIcon from '@iconify/icons-fa-brands/instagram'
+
+import CopyrightIcon from '@material-ui/icons/Copyright';
+
+import {MainComponentsSizes} from "../Constants";
 
 import './Footer.scss';
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import {MainComponentsSizes} from "../Constants";
 
 const useStyles = makeStyles((theme) => ({
   Footer: {
@@ -24,7 +32,34 @@ export default function Footer() {
     <footer
       className={`${classes.Footer} footer`}
     >
-  innsdinoisd
+      <Box className="socialMedias">
+        <InlineIcon icon={instagramIcon} className="socialMedia socialMedias__instagram"/>
+        <InlineIcon icon={viberIcon} className="socialMedia socialMedias__viber"/>
+        <InlineIcon icon={telegramIcon} className="socialMedia socialMedias__telegram"/>
+      </Box>
+
+      <Box display="flex" justifyContent="space-around" className="footer__sitemap">
+        <Typography variant="h6">Доставка</Typography>
+        <Typography variant="h6">Каталог</Typography>
+        <Typography variant="h6">Співпраця</Typography>
+      </Box>
+
+      <Box className="footer__author">
+        <Typography variant="h6">
+          Created by
+          <Link
+            href="https://github.com/maletsden" 
+            color="inherit" underline="always" target="_blank"
+          >
+            Denys Maletskyi
+          </Link>
+        </Typography>
+      </Box>
+
+      <Box className="footer__copyright">
+        <CopyrightIcon/>
+        <Typography variant="h6"> Fresh Flowers </Typography>
+      </Box>
     </footer>
   );
 };

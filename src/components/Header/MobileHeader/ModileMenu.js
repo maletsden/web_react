@@ -47,7 +47,7 @@ export default function MobileMenu() {
     <Box>
 
       <AppBar>
-        <Toolbar className={[classes.toolbar, "mobileToolBar"]}>
+        <Toolbar className={`${classes.toolbar} mobileToolBar`}>
           <Box className="mobileMenu">
             <Typography variant="h6">
               Fresh Flowers

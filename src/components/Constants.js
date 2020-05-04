@@ -5,8 +5,8 @@ export const MainComponentsSizes = {
     md: 56
   },
   mobileFooterHeight: {
-    xs: 56,
-    sm: 56,
-    md: 56
+    xs: 170,
+    sm: 170,
+    md: 170
   }
 };
