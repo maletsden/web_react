@@ -46,13 +46,11 @@ export default function Footer() {
 
       <Box className="footer__author">
         <Typography variant="h6">
-          Created by
-          <Link
-            href="https://github.com/maletsden" 
+          Created by <Link
+            href="https://github.com/maletsden"
             color="inherit" underline="always" target="_blank"
-          >
-            Denys Maletskyi
-          </Link>
+            className="footer__author-link"
+          > Denys Maletskyi  </Link>
         </Typography>
       </Box>
 
