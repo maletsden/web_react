@@ -1,0 +1,16 @@
+.mobileToolBar {
+  background: white;
+  color: black;
+}
+
+.mobileLogo {
+  width: 10%;
+}
+
+.mobileMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+}
