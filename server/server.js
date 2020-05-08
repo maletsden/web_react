@@ -11,5 +11,7 @@ server.get('*', (req, res) => {
 });
 
 server.listen(port, () => {
-  console.log('Server is up!');
+  console.log(`You can now view your project in the browser.\n
+  Local:            http://localhost:${port}
+  `)
 });
