@@ -9,26 +9,13 @@ import {
 } from "@material-ui/core";
 import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import {withStyles} from "@material-ui/core/styles";
+import {Link as RouterLink} from "react-router-dom";
 
 import DrawerContent from "./DrawerContent/DrawerContent";
-import {MainComponentsSizes} from '../../Constants';
 
 import './MobileMenu.scss';
 
-const useStyles = (theme) => ({
-  toolbar: {
-    minHeight: MainComponentsSizes.mobileHeaderHeight.md,
-    [`${theme.breakpoints.up('xs')} and (orientation: landscape)`]: {
-      minHeight: MainComponentsSizes.mobileHeaderHeight.xs,
-    },
-    [theme.breakpoints.up('sm')]: {
-      minHeight: MainComponentsSizes.mobileHeaderHeight.md,
-    },
-  },
-});
-
-class MobileMenu extends React.Component {
+export default class MobileMenu extends React.Component {
   constructor(props) {
     super(props);
 
@@ -56,7 +43,7 @@ class MobileMenu extends React.Component {
       <Box>
 
         <AppBar>
-          <Toolbar className={`${this.props.classes.toolbar} mobileToolBar`}>
+          <Toolbar className="mobileToolBar mobileToolBarHeight">
             <Box className="mobileMenu">
               <Typography variant="h6">
                 Fresh Flowers
@@ -64,7 +51,10 @@ class MobileMenu extends React.Component {
 
               <Box>
                 <IconButton edge="start" color="inherit" aria-label="menu">
-                  <ShoppingCartOutlinedIcon/>
+                  <RouterLink to="/cart">
+                    <ShoppingCartOutlinedIcon/>
+                  </RouterLink>
+
                 </IconButton>
                 <IconButton edge="start" color="inherit" aria-label="menu"
                             onClick={event => this.toggleDrawer(event, true)}>
@@ -92,5 +82,3 @@ class MobileMenu extends React.Component {
     );
   }
 }
-
-export default withStyles(useStyles)(MobileMenu);

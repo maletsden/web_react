@@ -1,6 +1,24 @@
+@import "../../Constants";
+
+@use "sass:map";
+
 .mobileToolBar {
   background: white;
   color: black;
+
+  &.mobileToolBarHeight {
+    @media (min-width: map-get($breakpoints, "xs")) {
+      min-height: map-get($mobile-header-height, "xs");
+    }
+
+    @media (min-width: map-get($breakpoints, "sm")) {
+      min-height: map-get($mobile-header-height, "sm");
+    }
+
+    @media (min-width: map-get($breakpoints, "md")) {
+      min-height: map-get($mobile-header-height, "md");
+    }
+  }
 }
 
 .mobileLogo {

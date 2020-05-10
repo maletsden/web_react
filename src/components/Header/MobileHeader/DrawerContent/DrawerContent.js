@@ -5,32 +5,33 @@ import {
   List,
   ListItemText
 } from "@material-ui/core";
-import ListItemLink from "./ListItemLink";
+import {Link as RouterLink} from "react-router-dom";
+import ListItem from "@material-ui/core/ListItem";
 
 const menuListItems = [
   {
     title: "Букети",
-    link: ""
+    link: "/bouquets"
   },
   {
     title: "Весільна флористика",
-    link: ""
+    link: "/wedding-flowers"
   },
   {
     title: "Квіткові композиції",
-    link: ""
+    link: "/flowers-compositions"
   },
   {
     title: "Квіти в коробці",
-    link: ""
+    link: "/flowers-in-box"
   },
   {
     title: "Доставка",
-    link: ""
+    link: "/delivery"
   },
   {
     title: "Контакти",
-    link: ""
+    link: "/contacts"
   }
 ];
 
@@ -41,10 +42,14 @@ export default function DrawerContent() {
         <Box mt={5}/>
         {
           menuListItems.map((menuListItem, index) => (
-            <ListItemLink href={menuListItem.link} key={index}>
-              <ListItemText primary={menuListItem.title} className="drawerContentItem"/>
-              <Box mb={5}/>
-            </ListItemLink>
+            <div key={index}>
+              <RouterLink to={menuListItem.link}>
+                <ListItem button component="button" >
+                  <ListItemText primary={menuListItem.title} className="drawerContentItem"/>
+                  <Box mb={5}/>
+                </ListItem>
+              </RouterLink>
+            </div>
           ))
         }
       </List>
