@@ -9,7 +9,7 @@ const database = [
   {
     "id": 0,
     "img": {
-      "path": "/images/img1.jpg",
+      "path": "/images/bouquets/img1.jpg",
       "title": "Рожева гіпсофіла"
     },
     "price": 450
@@ -17,7 +17,7 @@ const database = [
   {
     "id": 1,
     "img": {
-      "path": "/images/img2.jpg",
+      "path": "/images/bouquets/img2.jpg",
       "title": "Рожеві тюльпани"
     },
     "price": 500
@@ -25,7 +25,7 @@ const database = [
   {
     "id": 2,
     "img": {
-      "path": "/images/img3.jpg",
+      "path": "/images/bouquets/img3.jpg",
       "title": "Кущові троянди",
       "height": "300"
     },

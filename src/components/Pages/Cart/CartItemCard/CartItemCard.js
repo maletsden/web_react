@@ -29,6 +29,7 @@ export default function CartItemCard(props) {
             <Box mb={3}/>
 
             <Box className="cartItemQuantity">
+              {/* TODO: replace margins to sth better since element will move (quantity: 9 -> 10) */}
               <RemoveIcon onClick={() => props.updateQuantity(false)}/>
               <Box ml={1}/>
               <Typography>
