@@ -1,23 +1,22 @@
 {
-  "ItemsData": [
+  "bouquets": [
     {
       "img": {
-        "path": "/images/img1.jpg",
-        "title": "Рожева гіпсофіла",
-        "height": 300
+        "path": "/images/bouquets/img1.jpg",
+        "title": "Рожева гіпсофіла"
       },
       "price": 450
     },
     {
       "img": {
-        "path": "/images/img2.jpg",
+        "path": "/images/bouquets/img2.jpg",
         "title": "Рожеві тюльпани"
       },
       "price": 500
     },
     {
       "img": {
-        "path": "/images/img3.jpg",
+        "path": "/images/bouquets/img3.jpg",
         "title": "Кущові троянди",
         "height": "300"
       },
@@ -25,17 +24,67 @@
     },
     {
       "img": {
-        "path": "/images/img4.jpg",
+        "path": "/images/bouquets/img4.jpg",
         "title": "Букет з альстромерій"
       },
       "price": 600
     },
     {
       "img": {
-        "path": "/images/img5.jpg",
+        "path": "/images/bouquets/img5.jpg",
         "title": "Рожеві троянди"
       },
       "price": 350
+    }
+  ],
+
+
+
+  "weddingFlowers": [
+    {
+      "img": {
+        "path": "/images/wedding_flowers/wed1.jpg",
+        "title": "Весільний букет 1"
+      },
+      "price": 1500
+    },
+    {
+      "img": {
+        "path": "/images/wedding_flowers/wed2.jpg",
+        "title": "Весільний букет 2"
+      },
+      "price": 1000
+    },
+    {
+      "img": {
+        "path": "/images/wedding_flowers/wed3.jpg",
+        "title": "Білі гортензії"
+      },
+      "price": 2000
+    }
+  ],
+
+  "flowersInBox": [
+    {
+      "img": {
+        "path": "/images/flowers_in_box/box1.jpg",
+        "title": "Бокс з білими фаленопсисами"
+      },
+      "price": 500
+    },
+    {
+      "img": {
+        "path": "/images/flowers_in_box/box2.jpg",
+        "title": "Бокс з рожевими орхідеями"
+      },
+      "price": 800
+    },
+    {
+      "img": {
+        "path": "/images/flowers_in_box/box3.jpg",
+        "title": "Бокс з мімозою"
+      },
+      "price": 600
     }
   ]
 }
