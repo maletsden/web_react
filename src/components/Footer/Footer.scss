@@ -1,0 +1,38 @@
+.footer {
+  background: black;
+  color: white;
+
+  &__sitemap {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+  }
+  .footer__sitemap .MuiTypography-h6 {
+    font-size: 12px;
+  }
+  &__copyright, &__author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .MuiSvgIcon-root, .MuiTypography-h6 {
+      font-size: 12px;
+    }
+  }
+
+  &__author {
+    margin: 15px 0;
+  }
+}
+
+.socialMedias {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 25px;
+}
+
+.socialMedia {
+  margin: 0 15px;
+}
