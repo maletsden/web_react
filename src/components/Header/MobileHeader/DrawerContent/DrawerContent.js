@@ -18,10 +18,6 @@ const menuListItems = [
     link: "/wedding-flowers"
   },
   {
-    title: "Квіткові композиції",
-    link: "/flowers-compositions"
-  },
-  {
     title: "Квіти в коробці",
     link: "/flowers-in-box"
   },

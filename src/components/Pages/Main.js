@@ -5,7 +5,7 @@ import {
   Route as RouterRoute
 } from "react-router-dom";
 
-import Bouquets from "./Bouquests/Bouquets";
+import Bouquets from "./Bouquets/Bouquets";
 import WeddingFlowers from "./WeddingFlowers/WeddingFlowers";
 import FlowersCompositions from "./FlowersCompositions/FlowersCompositions";
 import FlowersInBox from "./FlowersInBox/FlowersInBox";
