@@ -17,6 +17,10 @@ import './Main.scss';
 
 const pages = [
   {
+    path: "/",
+    component: <Bouquets/>
+  },
+  {
     path: "/bouquets",
     component: <Bouquets/>
   },
