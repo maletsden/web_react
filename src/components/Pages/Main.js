@@ -7,7 +7,6 @@ import {
 
 import Bouquets from "./Bouquets/Bouquets";
 import WeddingFlowers from "./WeddingFlowers/WeddingFlowers";
-import FlowersCompositions from "./FlowersCompositions/FlowersCompositions";
 import FlowersInBox from "./FlowersInBox/FlowersInBox";
 import Contacts from "./Contacts/Contacts";
 import Delivery from "./Delivery/Delivery";
@@ -27,10 +26,6 @@ const pages = [
   {
     path: "/wedding-flowers",
     component: <WeddingFlowers/>
-  },
-  {
-    path: "/flowers-compositions",
-    component: <FlowersCompositions/>
   },
   {
     path: "/flowers-in-box",
