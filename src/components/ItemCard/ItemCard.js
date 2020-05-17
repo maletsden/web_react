@@ -23,7 +23,7 @@ const ColorButton = withStyles(() => ({
   },
 }))(Button);
 
-function ItemCard({ itemData }) {
+function ItemCard({ itemData, onAddItemClick }) {
 
   return (
     <Box marginX={3} marginBottom={7}>
@@ -47,6 +47,7 @@ function ItemCard({ itemData }) {
             <ColorButton
               variant="contained"
               endIcon={<ShoppingCartIcon/>}
+              onClick={onAddItemClick}
             >
               Замовити
             </ColorButton>

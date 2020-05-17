@@ -14,8 +14,15 @@ import {Link as RouterLink} from "react-router-dom";
 import DrawerContent from "./DrawerContent/DrawerContent";
 
 import './MobileMenu.scss';
+import {connect} from "react-redux";
+import {getCartItemsNum} from "../../../reducers";
+import Badge from "@material-ui/core/Badge";
 
-export default class MobileMenu extends React.Component {
+const mapStateToProps = state => ({
+  cartItemsNumber: getCartItemsNum(state)
+});
+
+class MobileMenu extends React.Component {
   constructor(props) {
     super(props);
 
@@ -52,7 +59,12 @@ export default class MobileMenu extends React.Component {
               <Box>
                 <IconButton edge="start" color="inherit" aria-label="menu">
                   <RouterLink to="/cart">
-                    <ShoppingCartOutlinedIcon/>
+                    <Badge badgeContent={this.props.cartItemsNumber} color="error" anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'right',
+                    }} max={99}>
+                      <ShoppingCartOutlinedIcon/>
+                    </Badge>
                   </RouterLink>
 
                 </IconButton>
@@ -82,3 +94,5 @@ export default class MobileMenu extends React.Component {
     );
   }
 }
+
+export default connect(mapStateToProps)(MobileMenu);
