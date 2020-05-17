@@ -1,13 +1,11 @@
 const {MongoClient} = require('mongodb');
 
-const USERNAME = "admin";
-const PASSWORD = "admin";
-
-const uri = `mongodb+srv://${USERNAME}:${PASSWORD}@freshflowers-5vyoi.mongodb.net/test?retryWrites=true&w=majority`;
+const uri = 'mongodb://heroku_hnd618dr:8fskid51bv25eje3gg7frfs7v9@ds145463.mlab.com:45463/heroku_hnd618dr';
 
 class DBController {
   constructor() {
-    this.client = new MongoClient(uri);
+    // TODO: in the future delete `uir` constant and use only `process.env.MONGODB_URI`
+    this.client = new MongoClient(process.env.MONGODB_URI || uri);
     this.isConnected = false;
   }
 

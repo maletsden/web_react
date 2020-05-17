@@ -8,7 +8,8 @@ const port = process.env.PORT || 3000;
 
 const db_controller = new DBController();
 
-const MAIN_DB_NAME = 'fresh_flowers';
+// TODO: in the future delete and use only `process.env.MONGODB_URI`
+const MAIN_DB_NAME = process.env.MONGODB_URI ? process.env.MONGODB_URI.slice(process.env.MONGODB_URI.lastIndexOf('/') + 1) : 'heroku_hnd618dr';
 
 db_controller.connect().then(() => {
 
