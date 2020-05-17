@@ -1,6 +1,24 @@
+@import "../Constants";
+
+@use "sass:map";
+
 .footer {
   background: black;
   color: white;
+
+  &.footerHeight {
+    @media (max-width: map-get($breakpoints, "xs")) and (orientation: landscape) {
+      min-height: map-get($mobile-footer-height, "xs");
+    }
+
+    @media (max-width: map-get($breakpoints, "sm")) {
+      min-height: map-get($mobile-footer-height, "sm");
+    }
+
+    @media (max-width: map-get($breakpoints, "md")) {
+      min-height: map-get($mobile-footer-height, "md");
+    }
+  }
 
   &__sitemap {
     display: flex;

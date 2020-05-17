@@ -1,33 +1,63 @@
 import React from 'react';
 
+import {
+  Switch as RouterSwitch,
+  Route as RouterRoute
+} from "react-router-dom";
+
+import Bouquets from "./Bouquets/Bouquets";
+import WeddingFlowers from "./WeddingFlowers/WeddingFlowers";
+import FlowersInBox from "./FlowersInBox/FlowersInBox";
+import Contacts from "./Contacts/Contacts";
+import Delivery from "./Delivery/Delivery";
+import Cart from "./Cart/Cart";
+
 import './Main.scss';
-import makeStyles from "@material-ui/core/styles/makeStyles";
 
-import {MainComponentsSizes} from "../Constants";
-import Bouquets from "./Bouquests/Bouquets";
-
-const useStyles = makeStyles((theme) => ({
-  Main: {
-    paddingTop: MainComponentsSizes.mobileHeaderHeight.md * 1.5,
-    minHeight: `calc(100vh - ${MainComponentsSizes.mobileFooterHeight.md}px)`,
-    [`${theme.breakpoints.up('xs')} and (orientation: landscape)`]: {
-      paddingTop: MainComponentsSizes.mobileHeaderHeight.xs * 1.5,
-      minHeight: `calc(100vh - ${MainComponentsSizes.mobileFooterHeight.xs}px)`,
-    },
-    [theme.breakpoints.up('sm')]: {
-      paddingTop: MainComponentsSizes.mobileHeaderHeight.sm * 1.5,
-      minHeight: `calc(100vh - ${MainComponentsSizes.mobileFooterHeight.sm}px)`,
-    },
+const pages = [
+  {
+    path: "/",
+    component: <Bouquets/>
   },
-}));
+  {
+    path: "/bouquets",
+    component: <Bouquets/>
+  },
+  {
+    path: "/wedding-flowers",
+    component: <WeddingFlowers/>
+  },
+  {
+    path: "/flowers-in-box",
+    component: <FlowersInBox/>
+  },
+  {
+    path: "/delivery",
+    component: <Delivery/>
+  },
+  {
+    path: "/contacts",
+    component: <Contacts/>
+  },
+  {
+    path: "/cart",
+    component: <Cart/>
+  }
+];
+
 
 export default function Main() {
-  const classes = useStyles();
-
   return (
-    <main className={`${classes.Main} mainContainer`}>
-      {/* TODO: add Router*/}
-      <Bouquets/>
+    <main className="mainContainer">
+      <RouterSwitch>
+        {
+          pages.map((page, index) => (
+            <RouterRoute exact path={page.path} key={index}>
+              {page.component}
+            </RouterRoute>
+          ))
+        }
+      </RouterSwitch>
     </main>
   );
 };

@@ -1,8 +1,6 @@
 import React from 'react';
 import {Box, Typography, Link} from "@material-ui/core";
 
-import makeStyles from "@material-ui/core/styles/makeStyles";
-
 import { InlineIcon } from '@iconify/react';
 import viberIcon from '@iconify/icons-fa-brands/viber';
 import telegramIcon from '@iconify/icons-fa-brands/telegram';
@@ -10,38 +8,34 @@ import instagramIcon from '@iconify/icons-fa-brands/instagram'
 
 import CopyrightIcon from '@material-ui/icons/Copyright';
 
-import {MainComponentsSizes} from "../Constants";
-
 import './Footer.scss';
-
-const useStyles = makeStyles((theme) => ({
-  Footer: {
-    minHeight: MainComponentsSizes.mobileFooterHeight.md,
-    [`${theme.breakpoints.up('xs')} and (orientation: landscape)`]: {
-      minHeight: MainComponentsSizes.mobileFooterHeight.xs,
-    },
-    [theme.breakpoints.up('sm')]: {
-      minHeight: MainComponentsSizes.mobileFooterHeight.md,
-    },
-  },
-}));
+import {Link as RouterLink} from "react-router-dom";
 
 export default function Footer() {
-  const classes = useStyles();
   return (
-    <footer
-      className={`${classes.Footer} footer`}
-    >
+    <footer className="footer footerHeight">
       <Box className="socialMedias">
-        <InlineIcon icon={instagramIcon} className="socialMedia socialMedias__instagram"/>
-        <InlineIcon icon={viberIcon} className="socialMedia socialMedias__viber"/>
-        <InlineIcon icon={telegramIcon} className="socialMedia socialMedias__telegram"/>
+        <Link href="https://www.instagram.com/fresh_flowers_/" target="_blank" color="inherit">
+          <InlineIcon icon={instagramIcon} className="socialMedia"/>
+        </Link>
+        <Link href="https://www.viber.me/fresh_flowers_/" target="_blank" color="inherit">
+          <InlineIcon icon={viberIcon} className="socialMedia"/>
+        </Link>
+        <Link href="https://www.t.me/fresh_flowers_/" target="_blank" color="inherit">
+          <InlineIcon icon={telegramIcon} className="socialMedia"/>
+        </Link>
       </Box>
 
       <Box display="flex" justifyContent="space-around" className="footer__sitemap">
-        <Typography variant="h6">Доставка</Typography>
-        <Typography variant="h6">Каталог</Typography>
-        <Typography variant="h6">Співпраця</Typography>
+        <RouterLink to="/delivery">
+          <Typography variant="h6">Доставка</Typography>
+        </RouterLink>
+        <RouterLink to="/bouquets">
+          <Typography variant="h6">Каталог</Typography>
+        </RouterLink>
+        <RouterLink to="/cooperation">
+          <Typography variant="h6">Співпраця</Typography>
+        </RouterLink>
       </Box>
 
       <Box className="footer__author">

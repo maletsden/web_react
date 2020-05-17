@@ -1,0 +1,19 @@
+.cartItemBox {
+  display: flex;
+}
+
+.cartItemTitle {
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.cartItemImg {
+  width: 30vw;
+  height: 30vw;
+}
+
+.cartItemQuantity {
+  display: flex;
+  align-items: center;
+}
+

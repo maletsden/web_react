@@ -1,3 +1,26 @@
+@import "../Constants";
+
+@use "sass:map";
+
 .mainContainer {
   box-sizing: border-box;
+
+  @media (min-width: map-get($breakpoints, "xs")) {
+    padding-top: map-get($mobile-header-height, "xs") * 1.5;
+    min-height: calc(100vh - #{map-get($mobile-footer-height, "xs")});
+  }
+
+  @media (min-width: map-get($breakpoints, "sm")) {
+    padding-top: map-get($mobile-header-height, "sm") * 1.5;
+    min-height: calc(100vh - #{map-get($mobile-footer-height, "sm")});
+  }
+
+  @media (min-width: map-get($breakpoints, "md")) {
+    padding-top: map-get($mobile-header-height, "md") * 1.5;
+    min-height: calc(100vh - #{map-get($mobile-footer-height, "md")});
+  }
+}
+
+.hr85vw {
+  width: 85vw;
 }

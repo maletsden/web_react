@@ -42,7 +42,7 @@ function ItemCard({ itemData }) {
 
           <Grid container direction="row" justify="space-around">
             <Typography variant="h6">
-              {itemData.price}грн
+              {itemData.price} грн
             </Typography>
             <ColorButton
               variant="contained"
