@@ -1,4 +1,4 @@
-const {MongoClient} = require('mongodb');
+const { MongoClient } = require('mongodb');
 
 const uri = 'mongodb://heroku_hnd618dr:8fskid51bv25eje3gg7frfs7v9@ds145463.mlab.com:45463/heroku_hnd618dr';
 
@@ -18,7 +18,7 @@ class DBController {
     if (this.isConnected) await this.client.close();
   }
 
-  fetchData({databaseName, collectionName, query={}, limit=0}) {
+  fetchData({ databaseName, collectionName, query={}, limit=0 }) {
     const db = this.client.db(databaseName);
 
     const collection = db.collection(collectionName);

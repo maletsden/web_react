@@ -11,12 +11,12 @@ export const CHANGE_QUANTITY   = 'CHANGE_QUANTITY';
  */
 
 export function addToCart(item) {
-  return { type: ADD_TO_CART, item}
+  return { type: ADD_TO_CART, item };
 }
 export function removeFromCart(item) {
-  return { type: REMOVE_FROM_CART, item}
+  return { type: REMOVE_FROM_CART, item };
 }
 
-export function changeQuantity(_id, increase) {
-  return { type: CHANGE_QUANTITY, _id, increase }
+export function changeQuantity(_id, value) {
+  return { type: CHANGE_QUANTITY, _id, value };
 }
