@@ -1,20 +1,20 @@
-import React from 'react';
-import {bouquets} from "../../../items_data";
-import Grid from "@material-ui/core/Grid";
-import ItemCard from "../../ItemCard/ItemCard";
+import React from "react";
+import {PagesContent, PageStoreWrapper} from "../PagesContent";
+import FiltersBar from "../../FiltersBar/FiltersBar";
 
-export default function Bouquets() {
-  return (
-    <Grid container>
-      {
-        bouquets.map(
-          (item, index) => (
-            <Grid container item justify="center" xs={12} sm={6} lg={4} key={index}>
-              <ItemCard itemData={item}/>
-            </Grid>
-          )
-        )
-      }
-    </Grid>
-  );
-};
+class Bouquets extends PagesContent {
+  fetchPageData() {
+    this.fetchData('fetchDataForBouquets');
+  }
+
+  render() {
+    return (
+      <div>
+        <FiltersBar/>
+        {super.render()}
+      </div>
+    );
+  }
+}
+
+export default PageStoreWrapper(Bouquets);
