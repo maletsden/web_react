@@ -16,8 +16,8 @@ export class PagesContent extends React.Component {
     this.fetchPageData();
   }
 
-  fetchData(collectionName) {
-    fetch(`/fetchData?collectionName=${collectionName}`).then(response => {
+  fetchData(fetchUrl) {
+    fetch(fetchUrl).then(response => {
       return response.json();
     }).then(response => {
       if (!response.data) {

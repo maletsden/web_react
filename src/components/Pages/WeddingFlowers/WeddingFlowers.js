@@ -2,7 +2,7 @@ import {PagesContent, PageStoreWrapper} from "../PagesContent";
 
 class WeddingFlowers extends PagesContent {
   fetchPageData() {
-    this.fetchData('weddingFlowers');
+    this.fetchData('fetchDataForWeddingFlowers');
   }
 }
 
