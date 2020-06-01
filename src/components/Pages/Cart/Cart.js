@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
   totalPrice: getCartTotal(state)
 });
 const mapDispatchToProps = dispatch => ({
-  changeQuantity: (id, increase) => dispatch(changeQuantity(id, increase))
+  changeQuantity: (id, value) => dispatch(changeQuantity(id, value))
 });
 
 
@@ -42,7 +42,7 @@ class Cart extends React.Component {
             this.props.cartData.items.map((item, index) => (
               <Box key={index}>
                 <CartItemCard data={item} quantity={this.props.cartData.quantityById[item._id]}
-                  updateQuantity={increase => this.props.changeQuantity(item._id, increase)}/>
+                  updateQuantity={value => this.props.changeQuantity(item._id, value)}/>
                 <Box mb={3}/>
               </Box>
 

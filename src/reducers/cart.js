@@ -9,6 +9,8 @@ const initialState = {
   quantityById: {}
 };
 
+const deleteProperty = (obj, property) => (({[property]:_, ...rest}) => rest)(obj);
+
 const addedItems = (state = initialState.items, action) => {
   switch (action.type) {
     case ADD_TO_CART:
@@ -32,18 +34,15 @@ const quantityById = (state = initialState.quantityById, action) => {
         [newItemId]: (state[newItemId] || 0) + 1
       };
     case REMOVE_FROM_CART:
-      return (({[action.item._id]:_, ...rest}) => rest)(state);
+      return deleteProperty(state, action.item._id);
     case CHANGE_QUANTITY:
-      const oldItemId = action._id;
+      const itemId = action._id;
 
-      if (!(oldItemId in state)) return state;
+      if (!(itemId in state)) return state;
 
       return {
         ...state,
-        [oldItemId]:
-          action.increase ?
-            Math.min(state[oldItemId] + 1, 1 << 31 - 2) :
-            Math.max(state[oldItemId] - 1, 0)
+        [itemId]: action.value
       };
     default:
       return state;
